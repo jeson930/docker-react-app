@@ -17,3 +17,17 @@ after_success:
 env:
    global:
       - REPO="git@github.com:jeson930/docker-react-app.git"
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "docker-react-app"
+  env: "DockerReactApp-env"
+  bucket_name: "s3의 이름"
+  bucket_path: "docker-react-app"
+  on:
+     branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+
+
