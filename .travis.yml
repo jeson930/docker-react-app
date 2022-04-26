@@ -13,3 +13,7 @@ script:
 
 after_success:
 	- echo "Test Success"
+
+env:
+	global:
+		- REPO="git@github.com:jeson930/docker-react-app.git"
